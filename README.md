@@ -6,6 +6,12 @@ This repository contains the official implementation of **PD-TNN**, a physics-dr
 
 ---
 
+## **Abstract**  
+
+Accurately predicting laser machining parameters for thin-film coloration remains challenging due to the nonlinear and one-to-many mapping between parameters and resulting colors. Existing methods rely on extensive trial-and-error experimentation, making them inefficient for practical applications. Moreover, conventional deep learning approaches often ignore critical physics-driven knowledge and fail to align the optimization process with human color perception. In this work, we present a physics-driven tandem neural network (PD-TNN) that integrates domain knowledge and perceptual optimization to improve inverse color prediction. By incorporating physics-based features—average fluence **F** and average time **τ**—PD-TNN mitigates the one-to-many mapping issue inherent in the inverse problem, leading to more physically consistent predictions. Additionally, employing **ΔE** as the loss function directly aligns the optimization objective with human color perception, enhancing accuracy beyond conventional numerical loss functions. PD-TNN achieves a mean test **ΔE** of **1.48**, with **74%** of predictions perceptually indistinguishable from their targets (**ΔE** ≤ **2.3**) and **97%** within acceptable industrial standards (**ΔE** ≤ **7**). Experimental results further confirm its ability to translate digital color values into precise laser-induced coloration on titanium surfaces. By overcoming the inefficiencies of both trial-and-error methods and conventional deep learning models, PD-TNN provides an effective approach for precision manufacturing and artistic applications, demonstrating its potential in laser processing technologies.  
+
+---
+
 ## **Dataset**  
 
 The dataset used in this study consists of **2428 experimental data points** collected from laser processing on titanium thin films. It includes three machining parameters (**pitch, marking speed, laser power**) and two physics-driven features (**average fluence F and average time τ**).  
@@ -23,7 +29,7 @@ Due to privacy constraints, the dataset is not publicly available. However, it c
 To train the forward model, which maps machining parameters to color outputs, open `training_forward.ipynb` in Jupyter Notebook or Google Colab and run the cells.  
 
 ### **Training the Inverse Model (PD-TNN)**  
-To train the PD-TNN inverse model, which predicts laser parameters for a target color, open `training_tandem.ipynb` in Jupyter Notebook or Google Colab and run the cells.  
+To train the PD-TNN inverse model, which predicts laser parameters for a target color, open `training_pdtnn.ipynb` in Jupyter Notebook or Google Colab and run the cells.  
 
 ---
 
